@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7fafc;
+    color: #243746;
+}
+
+.pharmacy-navbar {
+    background: #083b66;
+    min-height: 65px;
+}
+
+.navbar-brand {
+    font-size: 22px;
+}
+
+.navbar-brand i {
+    color: #35d39a;
+}
+
+.nav-link {
+    margin-left: 8px;
+}
+
+.nav-link:hover {
+    color: #35d39a !important;
+}
+
+.hero-section {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(8, 59, 102, 0.88),
+            rgba(24, 165, 107, 0.78)
+        ),
+        url("https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section h1 {
+    font-size: 55px;
+    font-weight: 800;
+}
+
+.hero-section p {
+    max-width: 600px;
+}
+
+.search-section {
+    margin-top: -45px;
+    position: relative;
+}
+
+.search-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.section-title {
+    color: #123047;
+    font-weight: 800;
+}
+
+.category-card {
+    background: white;
+
+    padding: 30px 15px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-7px);
+}
+
+.category-card h5 {
+    color: #123047;
+    margin-top: 15px;
+}
+
+.category-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e7f8f1;
+
+    color: #18a56b;
+
+    font-size: 30px;
+}
+
+.medicine-card {
+    border: none;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    background: white;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s;
+}
+
+.medicine-card:hover {
+    transform: translateY(-5px);
+}
+
+.medicine-card img {
+    height: 210px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.medicine-card-body {
+    padding: 20px;
+}
+
+.price {
+    color: #0d6efd;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.old-price {
+    color: #999;
+    text-decoration: line-through;
+}
+
+.feature-card {
+    background: white;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.feature-card i {
+    font-size: 40px;
+    color: #18a56b;
+}
+
+.feature-card h5 {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.offer-section {
+    background: #eef8f5;
+}
+
+.offer-box {
+    padding: 40px;
+
+    border-radius: 20px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d6efd,
+            #18a56b
+        );
+}
+
+.footer {
+    background: #092f4d;
+    color: #d9e8f3;
+}
+
+.footer h5 {
+    color: #35d39a;
+}
+
+.footer a {
+    color: #d9e8f3;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #35d39a;
+}
+
+.cart-count {
+    font-size: 10px;
+}
+
+@media (max-width: 768px) {
+
+    .hero-section h1 {
+        font-size: 40px;
+    }
+
+    .hero-section {
+        min-height: 450px;
+    }
+
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login - MediCare Pharmacy</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar pharmacy-navbar navbar-dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+            <i class="bi bi-capsule"></i> MediCare Pharmacy
+        </a>
+    </div>
+</nav>
+
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-5">
+
+                <div class="card shadow p-4">
+
+                    <div class="text-center">
+
+                        <i class="bi bi-shield-lock fs-1 text-success"></i>
+
+                        <h2 class="fw-bold mt-2">
+                            Admin Login
+                        </h2>
+
+                    </div>
+
+                    <form onsubmit="adminLogin(event)">
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Username
+                            </label>
+
+                            <input type="text"
+                                   id="adminUsername"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Password
+                            </label>
+
+                            <input type="password"
+                                   id="adminPassword"
+                                   class="form-control"
+                                   required>
+
+                        </div>
+
+                        <button class="btn btn-success w-100">
+                            Login
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+function adminLogin(event) {
+
+    event.preventDefault();
+
+    let username =
+        document.getElementById("adminUsername").value;
+
+    let password =
+        document.getElementById("adminPassword").value;
+
+    if (username === "admin" && password === "admin123") {
+
+        localStorage.setItem("adminLoggedIn", "true");
+
+        alert("Admin login successful!");
+
+        window.location.href = "admin.html";
+
+    } else {
+
+        alert("Invalid username or password.");
+
+    }
+}
+</script>
+
+</body>
+</html>

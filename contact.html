@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact - MediCare Pharmacy</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg pharmacy-navbar navbar-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            <i class="bi bi-capsule"></i> MediCare Pharmacy
+        </a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="medicines.html">Medicines</a></li>
+                <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link" href="health-products.html">Health Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">
+                        <i class="bi bi-cart"></i>
+                        Cart
+                        <span class="badge bg-success cart-count">0</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Contact Us</h1>
+            <p class="text-muted">We are here to help you.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-5">
+
+                <div class="card shadow-sm p-4 h-100">
+
+                    <h4>Get In Touch</h4>
+
+                    <p>
+                        <i class="bi bi-geo-alt text-success"></i>
+                        Hyderabad, Telangana
+                    </p>
+
+                    <p>
+                        <i class="bi bi-telephone text-success"></i>
+                        +91 98765 43210
+                    </p>
+
+                    <p>
+                        <i class="bi bi-envelope text-success"></i>
+                        support@medicare.com
+                    </p>
+
+                    <p>
+                        <i class="bi bi-clock text-success"></i>
+                        Mon - Sun: 9:00 AM - 9:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-7">
+
+                <div class="card shadow-sm p-4">
+
+                    <h4>Send Us a Message</h4>
+
+                    <form onsubmit="sendMessage(event)">
+
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" id="name"
+                                   class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="email"
+                                   class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea id="message"
+                                      class="form-control"
+                                      rows="5" required></textarea>
+                        </div>
+
+                        <button class="btn btn-success w-100">
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="footer text-white py-4">
+    <div class="container text-center">
+        <h5>MediCare Pharmacy</h5>
+        <p>Your Health, Our Priority</p>
+        <p class="mb-0">© 2026 MediCare Pharmacy. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="script.js"></script>
+
+<script>
+function sendMessage(event) {
+    event.preventDefault();
+
+    alert("Thank you! Your message has been sent.");
+
+    event.target.reset();
+}
+</script>
+
+</body>
+</html>

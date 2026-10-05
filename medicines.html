@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Medicines - MediCare Pharmacy</title>
+
+    <link rel="stylesheet"
+          href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet"
+          href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark pharmacy-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold"
+           href="index.html">
+
+            <i class="bi bi-heart-pulse-fill"></i>
+            MediCare Pharmacy
+
+        </a>
+
+        <button class="navbar-toggler"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse"
+             id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       href="medicines.html">
+                        Medicines
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="categories.html">
+                        Categories
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="health-products.html">
+                        Health Products
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="cart.html">
+
+                        <i class="bi bi-cart3"></i>
+                        Cart
+
+                        <span class="badge bg-danger cart-count">
+                            0
+                        </span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- PAGE HEADER -->
+
+<section class="py-5 bg-light">
+
+    <div class="container text-center">
+
+        <h1 class="fw-bold">
+            Medicines
+        </h1>
+
+        <p class="text-muted">
+            Find the medicines and healthcare products you need.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SEARCH AND FILTER -->
+
+<section class="py-4">
+
+    <div class="container">
+
+        <div class="row g-3">
+
+            <div class="col-md-8">
+
+                <div class="input-group">
+
+                    <input type="text"
+                           id="medicineSearch"
+                           class="form-control"
+                           placeholder="Search medicine...">
+
+                    <button class="btn btn-success"
+                            onclick="filterMedicines()">
+
+                        <i class="bi bi-search"></i>
+                        Search
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <select id="categoryFilter"
+                        class="form-select"
+                        onchange="filterMedicines()">
+
+                    <option value="">
+                        All Categories
+                    </option>
+
+                    <option value="Pain Relief">
+                        Pain Relief
+                    </option>
+
+                    <option value="Cold and Cough">
+                        Cold and Cough
+                    </option>
+
+                    <option value="Vitamins">
+                        Vitamins
+                    </option>
+
+                    <option value="First Aid">
+                        First Aid
+                    </option>
+
+                    <option value="Health Devices">
+                        Health Devices
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MEDICINES -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row"
+             id="medicineList">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer py-4">
+
+    <div class="container text-center">
+
+        <h5>
+            MediCare Pharmacy
+        </h5>
+
+        <p>
+            Your trusted online pharmacy.
+        </p>
+
+        <hr>
+
+        <p class="mb-0">
+            © 2026 MediCare Pharmacy. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+<script src="script.js"></script>
+
+<script src="medicines.js"></script>
+
+
+<script>
+
+let allMedicines =
+    JSON.parse(localStorage.getItem("medicines")) || [];
+
+
+function displayMedicines(list) {
+
+    let container =
+        document.getElementById("medicineList");
+
+    container.innerHTML = "";
+
+
+    if (list.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="col-12 text-center">
+
+                <h4>
+                    No medicines found
+                </h4>
+
+                <p class="text-muted">
+                    Try another search.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    list.forEach(function(medicine) {
+
+        container.innerHTML += `
+
+            <div class="col-md-4 col-lg-3 mb-4">
+
+                <div class="card medicine-card h-100">
+
+                    <img src="${medicine.image}"
+                         class="card-img-top"
+                         alt="${medicine.name}">
+
+                    <div class="card-body">
+
+                        <span class="badge bg-success mb-2">
+                            ${medicine.category}
+                        </span>
+
+                        <h5 class="card-title">
+                            ${medicine.name}
+                        </h5>
+
+                        <p class="text-muted">
+                            ${medicine.description}
+                        </p>
+
+                        <h5 class="text-success">
+                            ₹${medicine.price}
+                        </h5>
+
+
+                        <div class="d-grid gap-2">
+
+                            <button
+                                class="btn btn-success"
+                                onclick="addToCart(${medicine.id})">
+
+                                <i class="bi bi-cart-plus"></i>
+
+                                Add to Cart
+
+                            </button>
+
+
+                            <a
+                                href="medicine-details.html?id=${medicine.id}"
+                                class="btn btn-outline-primary">
+
+                                View Details
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+
+function filterMedicines() {
+
+    let search =
+        document.getElementById("medicineSearch")
+        .value
+        .toLowerCase();
+
+    let category =
+        document.getElementById("categoryFilter")
+        .value;
+
+
+    let filtered =
+        allMedicines.filter(function(medicine) {
+
+            let matchesSearch =
+                medicine.name
+                .toLowerCase()
+                .includes(search);
+
+
+            let matchesCategory =
+                category === "" ||
+                medicine.category === category;
+
+
+            return matchesSearch && matchesCategory;
+
+        });
+
+
+    displayMedicines(filtered);
+
+}
+
+
+function loadFromURL() {
+
+    let params =
+        new URLSearchParams(window.location.search);
+
+
+    let search =
+        params.get("search");
+
+    let category =
+        params.get("category");
+
+
+    if (search) {
+
+        document.getElementById("medicineSearch").value =
+            search;
+
+    }
+
+
+    if (category) {
+
+        document.getElementById("categoryFilter").value =
+            category;
+
+    }
+
+
+    filterMedicines();
+
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        loadFromURL();
+
+        updateCartCount();
+
+    }
+);
+
+</script>
+
+</body>
+</html>

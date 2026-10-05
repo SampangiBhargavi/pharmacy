@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Offers - MediCare Pharmacy</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="script.js"></script>
+<script src="offers.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg pharmacy-navbar navbar-dark">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            <i class="bi bi-capsule"></i> MediCare Pharmacy
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="medicines.html">Medicines</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="categories.html">Categories</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="health-products.html">Health Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="offers.html">Offers</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">
+                        <i class="bi bi-cart"></i>
+                        Cart
+                        <span class="badge bg-success cart-count">0</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h1 class="fw-bold">Special Offers</h1>
+
+            <p class="text-muted">
+                Save more on your healthcare essentials.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="card h-100 shadow-sm text-center p-4">
+
+                    <i class="bi bi-percent fs-1 text-success"></i>
+
+                    <h3 class="mt-3">15% OFF</h3>
+
+                    <p>
+                        Get 15% discount on your first order.
+                    </p>
+
+                    <h5 class="text-success">MEDI15</h5>
+
+                    <button class="btn btn-success mt-2"
+                            onclick="copyCode('MEDI15')">
+                        Copy Code
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card h-100 shadow-sm text-center p-4">
+
+                    <i class="bi bi-truck fs-1 text-success"></i>
+
+                    <h3 class="mt-3">Free Delivery</h3>
+
+                    <p>
+                        Enjoy free delivery on selected orders.
+                    </p>
+
+                    <h5 class="text-success">
+                        FREE DELIVERY
+                    </h5>
+
+                    <button class="btn btn-success mt-2"
+                            onclick="alert('Free delivery offer applied!')">
+                        Use Offer
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card h-100 shadow-sm text-center p-4">
+
+                    <i class="bi bi-heart-pulse fs-1 text-success"></i>
+
+                    <h3 class="mt-3">Health Savings</h3>
+
+                    <p>
+                        Special discounts on selected health products.
+                    </p>
+
+                    <h5 class="text-success">
+                        HEALTH20
+                    </h5>
+
+                    <button class="btn btn-success mt-2"
+                            onclick="copyCode('HEALTH20')">
+                        Copy Code
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="footer text-white py-4">
+
+    <div class="container text-center">
+
+        <h5>MediCare Pharmacy</h5>
+
+        <p>Your Health, Our Priority</p>
+
+        <p class="mb-0">
+            © 2026 MediCare Pharmacy. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="script.js"></script>
+
+<script>
+function copyCode(code) {
+    navigator.clipboard.writeText(code);
+    alert("Coupon code " + code + " copied!");
+}
+</script>
+
+</body>
+</html>

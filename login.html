@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - MediCare Pharmacy</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar pharmacy-navbar navbar-dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+            <i class="bi bi-capsule"></i> MediCare Pharmacy
+        </a>
+    </div>
+</nav>
+
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-5">
+
+                <div class="card shadow p-4">
+
+                    <div class="text-center">
+                        <i class="bi bi-person-circle fs-1 text-success"></i>
+                        <h2 class="fw-bold mt-2">Login</h2>
+                    </div>
+
+                    <form onsubmit="loginUser(event)">
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="loginEmail"
+                                   class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" id="loginPassword"
+                                   class="form-control" required>
+                        </div>
+
+                        <button class="btn btn-success w-100">
+                            Login
+                        </button>
+
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <a href="index.html">Back to Home</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+function loginUser(event) {
+
+    event.preventDefault();
+
+    let email = document.getElementById("loginEmail").value;
+    let password = document.getElementById("loginPassword").value;
+
+    if (email && password) {
+
+        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("userEmail", email);
+
+        alert("Login successful!");
+
+        window.location.href = "index.html";
+    }
+}
+</script>
+
+</body>
+</html>

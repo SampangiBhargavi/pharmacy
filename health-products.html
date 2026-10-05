@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Health Products - MediCare Pharmacy</title>
+
+    <link rel="stylesheet"
+          href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet"
+          href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark pharmacy-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold"
+           href="index.html">
+
+            <i class="bi bi-heart-pulse-fill"></i>
+            MediCare Pharmacy
+
+        </a>
+
+
+        <button class="navbar-toggler"
+                data-bs-toggle="collapse"
+                data-bs-target="#nav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="nav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="medicines.html">
+                        Medicines
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="categories.html">
+                        Categories
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       href="health-products.html">
+                        Health Products
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="cart.html">
+
+                        <i class="bi bi-cart3"></i>
+                        Cart
+
+                        <span class="badge bg-danger cart-count">
+                            0
+                        </span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- HEADER -->
+
+<section class="py-5 bg-light">
+
+    <div class="container text-center">
+
+        <h1 class="fw-bold">
+            Health Products
+        </h1>
+
+        <p class="text-muted">
+            Healthcare essentials for everyday wellness.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <!-- Product 1 -->
+
+            <div class="col-md-4 col-lg-3">
+
+                <div class="card medicine-card h-100">
+
+                    <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883"
+                         class="card-img-top"
+                         alt="Face Mask">
+
+                    <div class="card-body">
+
+                        <span class="badge bg-success">
+                            Personal Care
+                        </span>
+
+                        <h5 class="mt-2">
+                            Face Masks
+                        </h5>
+
+                        <p class="text-muted">
+                            Comfortable protective face masks.
+                        </p>
+
+                        <h5 class="text-success">
+                            ₹149
+                        </h5>
+
+                        <button class="btn btn-success w-100"
+                                onclick="addProductToCart(101)">
+
+                            <i class="bi bi-cart-plus"></i>
+                            Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 2 -->
+
+            <div class="col-md-4 col-lg-3">
+
+                <div class="card medicine-card h-100">
+
+                    <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f"
+                         class="card-img-top"
+                         alt="Hand Sanitizer">
+
+                    <div class="card-body">
+
+                        <span class="badge bg-success">
+                            Hygiene
+                        </span>
+
+                        <h5 class="mt-2">
+                            Hand Sanitizer
+                        </h5>
+
+                        <p class="text-muted">
+                            Convenient hand hygiene solution.
+                        </p>
+
+                        <h5 class="text-success">
+                            ₹99
+                        </h5>
+
+                        <button class="btn btn-success w-100"
+                                onclick="addProductToCart(102)">
+
+                            <i class="bi bi-cart-plus"></i>
+                            Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 3 -->
+
+            <div class="col-md-4 col-lg-3">
+
+                <div class="card medicine-card h-100">
+
+                    <img src="https://images.unsplash.com/photo-1584634731339-252c581abfc5"
+                         class="card-img-top"
+                         alt="Gloves">
+
+                    <div class="card-body">
+
+                        <span class="badge bg-success">
+                            Hygiene
+                        </span>
+
+                        <h5 class="mt-2">
+                            Medical Gloves
+                        </h5>
+
+                        <p class="text-muted">
+                            Disposable gloves for daily protection.
+                        </p>
+
+                        <h5 class="text-success">
+                            ₹129
+                        </h5>
+
+                        <button class="btn btn-success w-100"
+                                onclick="addProductToCart(103)">
+
+                            <i class="bi bi-cart-plus"></i>
+                            Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 4 -->
+
+            <div class="col-md-4 col-lg-3">
+
+                <div class="card medicine-card h-100">
+
+                    <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8"
+                         class="card-img-top"
+                         alt="Personal Care">
+
+                    <div class="card-body">
+
+                        <span class="badge bg-success">
+                            Personal Care
+                        </span>
+
+                        <h5 class="mt-2">
+                            Personal Care Kit
+                        </h5>
+
+                        <p class="text-muted">
+                            Everyday personal care essentials.
+                        </p>
+
+                        <h5 class="text-success">
+                            ₹249
+                        </h5>
+
+                        <button class="btn btn-success w-100"
+                                onclick="addProductToCart(104)">
+
+                            <i class="bi bi-cart-plus"></i>
+                            Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer py-4">
+
+    <div class="container text-center">
+
+        <h5>
+            MediCare Pharmacy
+        </h5>
+
+        <p>
+            Your trusted online pharmacy.
+        </p>
+
+        <hr>
+
+        <p class="mb-0">
+            © 2026 MediCare Pharmacy. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+<script src="script.js"></script>
+
+
+<script>
+
+function addProductToCart(id) {
+
+    let products = {
+
+        101: {
+            name: "Face Masks",
+            price: 149,
+            image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883"
+        },
+
+        102: {
+            name: "Hand Sanitizer",
+            price: 99,
+            image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f"
+        },
+
+        103: {
+            name: "Medical Gloves",
+            price: 129,
+            image: "https://images.unsplash.com/photo-1584634731339-252c581abfc5"
+        },
+
+        104: {
+            name: "Personal Care Kit",
+            price: 249,
+            image: "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8"
+        }
+
+    };
+
+
+    let product = products[id];
+
+    let cart = getCart();
+
+
+    let existing =
+        cart.find(function(item) {
+            return item.id === id;
+        });
+
+
+    if (existing) {
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+
+            id: id,
+
+            name: product.name,
+
+            price: product.price,
+
+            image: product.image,
+
+            quantity: 1
+
+        });
+
+    }
+
+
+    saveCart(cart);
+
+    updateCartCount();
+
+    alert(product.name + " added to cart!");
+
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    updateCartCount();
+
+});
+
+</script>
+
+</body>
+</html>

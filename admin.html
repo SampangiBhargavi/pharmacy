@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin - MediCare Pharmacy</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar pharmacy-navbar navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            <i class="bi bi-capsule"></i> MediCare Pharmacy
+        </a>
+
+        <button class="btn btn-outline-light"
+                onclick="logoutAdmin()">
+            Logout
+        </button>
+
+    </div>
+
+</nav>
+
+
+<section class="py-5">
+
+    <div class="container">
+
+        <h1 class="fw-bold mb-4">
+            Admin Dashboard
+        </h1>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="card shadow-sm text-center p-4">
+
+                    <i class="bi bi-capsule fs-1 text-success"></i>
+
+                    <h4 class="mt-3">
+                        Medicines
+                    </h4>
+
+                    <h2 id="medicineCount">0</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card shadow-sm text-center p-4">
+
+                    <i class="bi bi-cart-check fs-1 text-success"></i>
+
+                    <h4 class="mt-3">
+                        Orders
+                    </h4>
+
+                    <h2 id="orderCount">0</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card shadow-sm text-center p-4">
+
+                    <i class="bi bi-tags fs-1 text-success"></i>
+
+                    <h4 class="mt-3">
+                        Offers
+                    </h4>
+
+                    <h2>3</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card shadow-sm mt-5 p-4">
+
+            <h4>Medicine Management</h4>
+
+            <button class="btn btn-success mt-3"
+                    onclick="addMedicine()">
+                <i class="bi bi-plus"></i>
+                Add Medicine
+            </button>
+
+            <button class="btn btn-danger mt-3"
+                    onclick="clearMedicines()">
+                Clear Medicines
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+if (localStorage.getItem("adminLoggedIn") !== "true") {
+    window.location.href = "admin-login.html";
+}
+
+
+function loadDashboard() {
+
+    let medicines =
+        JSON.parse(localStorage.getItem("medicines") || "[]");
+
+    let orders =
+        JSON.parse(localStorage.getItem("orders") || "[]");
+
+    document.getElementById("medicineCount").innerText =
+        medicines.length;
+
+    document.getElementById("orderCount").innerText =
+        orders.length;
+}
+
+
+function addMedicine() {
+
+    let name = prompt("Enter medicine name:");
+
+    if (!name) {
+        return;
+    }
+
+    let price = prompt("Enter medicine price:");
+
+    if (!price) {
+        return;
+    }
+
+    let medicines =
+        JSON.parse(localStorage.getItem("medicines") || "[]");
+
+    let newMedicine = {
+
+        id: Date.now(),
+
+        name: name,
+
+        category: "General Healthcare",
+
+        price: Number(price),
+
+        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae",
+
+        description: "Healthcare product available at MediCare Pharmacy."
+
+    };
+
+    medicines.push(newMedicine);
+
+    localStorage.setItem(
+        "medicines",
+        JSON.stringify(medicines)
+    );
+
+    alert("Medicine added successfully!");
+
+    loadDashboard();
+}
+
+
+function clearMedicines() {
+
+    if (confirm("Are you sure you want to clear medicines?")) {
+
+        localStorage.removeItem("medicines");
+
+        alert("Medicines cleared.");
+
+        loadDashboard();
+    }
+}
+
+
+function logoutAdmin() {
+
+    localStorage.removeItem("adminLoggedIn");
+
+    window.location.href = "admin-login.html";
+}
+
+
+loadDashboard();
+
+</script>
+
+</body>
+</html>

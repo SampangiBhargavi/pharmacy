@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MediCare Pharmacy</title>
+
+
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet"
+          href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+
+    <!-- Bootstrap Icons -->
+
+    <link rel="stylesheet"
+          href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+
+    <!-- Our CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     NAVBAR
+========================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark pharmacy-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold"
+           href="index.html">
+
+            <i class="bi bi-heart-pulse-fill"></i>
+
+            MediCare Pharmacy
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse"
+             id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+
+                    <a class="nav-link active"
+                       href="index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="medicines.html">
+
+                        Medicines
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="categories.html">
+
+                        Categories
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="health-products.html">
+
+                        Health Products
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="about.html">
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="contact.html">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+                <!-- Cart -->
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="cart.html">
+
+                        <i class="bi bi-cart3"></i>
+
+                        Cart
+
+                        <span class="badge bg-danger cart-count">
+                            0
+                        </span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ==========================================
+     HERO SECTION
+========================================== -->
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <h1 class="display-4 fw-bold text-white">
+
+                    Your Health,
+
+                    <br>
+
+                    Our Priority
+
+                </h1>
+
+
+                <p class="lead text-white">
+
+                    Trusted medicines and healthcare products
+                    delivered to your doorstep.
+
+                </p>
+
+
+                <a href="medicines.html"
+                   class="btn btn-success btn-lg">
+
+                    Shop Medicines
+
+                </a>
+
+
+                <a href="contact.html"
+                   class="btn btn-outline-light btn-lg ms-2">
+
+                    Contact Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     SEARCH
+========================================== -->
+
+<section class="search-section">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <h3 class="text-center mb-3">
+
+                    Search Medicines
+
+                </h3>
+
+
+                <div class="input-group search-box">
+
+                    <input
+                        type="text"
+                        id="homeSearch"
+                        class="form-control"
+                        placeholder="Search medicine..."
+                    >
+
+
+                    <button
+                        class="btn btn-success"
+                        onclick="searchMedicine()">
+
+                        <i class="bi bi-search"></i>
+
+                        Search
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     CATEGORIES
+========================================== -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center mb-4">
+
+            Shop By Category
+
+        </h2>
+
+
+        <div class="row g-4">
+
+
+            <!-- Pain Relief -->
+
+            <div class="col-md-3">
+
+                <a href="medicines.html?category=Pain Relief"
+                   class="text-decoration-none">
+
+                    <div class="card category-card text-center p-4">
+
+                        <i class="bi bi-capsule category-icon"></i>
+
+                        <h5 class="mt-3">
+
+                            Pain Relief
+
+                        </h5>
+
+                        <p class="text-muted">
+
+                            Pain and fever medicines
+
+                        </p>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Cold -->
+
+            <div class="col-md-3">
+
+                <a href="medicines.html?category=Cold and Cough"
+                   class="text-decoration-none">
+
+                    <div class="card category-card text-center p-4">
+
+                        <i class="bi bi-thermometer-half category-icon"></i>
+
+                        <h5 class="mt-3">
+
+                            Cold & Cough
+
+                        </h5>
+
+                        <p class="text-muted">
+
+                            Cold and cough care
+
+                        </p>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Vitamins -->
+
+            <div class="col-md-3">
+
+                <a href="medicines.html?category=Vitamins"
+                   class="text-decoration-none">
+
+                    <div class="card category-card text-center p-4">
+
+                        <i class="bi bi-capsule-pill category-icon"></i>
+
+                        <h5 class="mt-3">
+
+                            Vitamins
+
+                        </h5>
+
+                        <p class="text-muted">
+
+                            Vitamins and supplements
+
+                        </p>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- First Aid -->
+
+            <div class="col-md-3">
+
+                <a href="medicines.html?category=First Aid"
+                   class="text-decoration-none">
+
+                    <div class="card category-card text-center p-4">
+
+                        <i class="bi bi-bandaid category-icon"></i>
+
+                        <h5 class="mt-3">
+
+                            First Aid
+
+                        </h5>
+
+                        <p class="text-muted">
+
+                            First aid products
+
+                        </p>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     POPULAR MEDICINES
+========================================== -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <h2 class="text-center mb-5">
+
+            Popular Medicines
+
+        </h2>
+
+
+        <div
+            class="row"
+            id="popularMedicines">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     FEATURES
+========================================== -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center mb-5">
+
+            Why Choose MediCare?
+
+        </h2>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-3">
+
+                <div class="card feature-card text-center p-4 h-100">
+
+                    <i class="bi bi-truck fs-1 text-success"></i>
+
+                    <h5 class="mt-3">
+
+                        Fast Delivery
+
+                    </h5>
+
+                    <p>
+
+                        Get your medicines delivered quickly.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-3">
+
+                <div class="card feature-card text-center p-4 h-100">
+
+                    <i class="bi bi-shield-check fs-1 text-success"></i>
+
+                    <h5 class="mt-3">
+
+                        Trusted Products
+
+                    </h5>
+
+                    <p>
+
+                        Quality healthcare products.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-3">
+
+                <div class="card feature-card text-center p-4 h-100">
+
+                    <i class="bi bi-headset fs-1 text-success"></i>
+
+                    <h5 class="mt-3">
+
+                        Customer Support
+
+                    </h5>
+
+                    <p>
+
+                        We are here to help you.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-3">
+
+                <div class="card feature-card text-center p-4 h-100">
+
+                    <i class="bi bi-tag fs-1 text-success"></i>
+
+                    <h5 class="mt-3">
+
+                        Best Offers
+
+                    </h5>
+
+                    <p>
+
+                        Save more on healthcare products.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     OFFER
+========================================== -->
+
+<section class="offer-section py-5">
+
+    <div class="container">
+
+        <div class="offer-box text-center">
+
+            <h2>
+
+                Get 15% OFF
+
+            </h2>
+
+            <p>
+
+                Use coupon code
+
+            </p>
+
+            <h4>
+
+                MEDI15
+
+            </h4>
+
+            <p>
+
+                On your first order
+
+            </p>
+
+            <a href="medicines.html"
+               class="btn btn-light">
+
+                Shop Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="footer py-4">
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <div class="col-md-6">
+
+                <h5>
+
+                    MediCare Pharmacy
+
+                </h5>
+
+                <p>
+
+                    Your trusted online pharmacy
+                    for medicines and healthcare products.
+
+                </p>
+
+            </div>
+
+
+            <div class="col-md-6 text-md-end">
+
+                <p>
+
+                    <i class="bi bi-telephone"></i>
+
+                    +91 98765 43210
+
+                </p>
+
+                <p>
+
+                    <i class="bi bi-envelope"></i>
+
+                    support@medicare.com
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <p class="text-center mb-0">
+
+            © 2026 MediCare Pharmacy.
+            All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ==========================================
+     BOOTSTRAP
+========================================== -->
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+
+<!-- Main JavaScript -->
+
+<script src="script.js"></script>
+
+
+<!-- Medicine JavaScript -->
+
+<script src="medicines.js"></script>
+
+
+</body>
+
+</html>
